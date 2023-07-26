@@ -44,7 +44,7 @@ export class ShoppingCart {
       return;
     }
 
-    this.orderStatus = 'Closed';
+    this._orderStatus = 'Closed';
     this.sendMessage(`Seu pedido com o total de ${this.total()} foi recebido.`);
     this.saveOrder();
     this.clear();
