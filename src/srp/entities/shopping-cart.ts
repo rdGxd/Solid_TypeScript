@@ -1,0 +1,45 @@
+// Primeiro faça o código do seu jeito depois aplique o S.O.L.I.D
+
+import { CartItem } from './interfaces/cart-item';
+
+// Uma classe pode ser considerada coesa quando ela utiliza seus atributos dentro de seus métodos
+
+// Criando a classe
+export class ShoppingCart {
+  // O carrinho de compras precisa ter items
+  private readonly _items: CartItem[] = [];
+
+  // Adicionando o item ao carrinho
+  addItem(item: CartItem): void {
+    this._items.push(item);
+  }
+
+  // Remover item do carrinho
+  removeItem(index: number): void {
+    this._items.splice(index, 1);
+  }
+
+  // Retornando os items que tem no carrinho
+  get items(): Readonly<CartItem[]> {
+    return this._items;
+  }
+
+  // Fazendo o total
+  total(): number {
+    // o .toFixed retorna uma string então convertemos para number antes de retorna
+    return Number(
+      this._items.reduce((total, next) => total + next.price, 0).toFixed(2),
+    );
+  }
+
+  // Checando se o carrinho ta vazio
+  isEmpty(): boolean {
+    return this._items.length === 0;
+  }
+
+  // Limpando o array ( Carrinho )
+  clear(): void {
+    console.log('Carrinhos de compras foi limpo');
+    this._items.length = 0;
+  }
+}

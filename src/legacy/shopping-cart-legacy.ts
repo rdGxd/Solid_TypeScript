@@ -1,10 +1,10 @@
-// Primeiro faça o código do seu jeito depois você aplica o S.O.L.I.D
+// Primeiro faça o código do seu jeito depois aplique o S.O.L.I.D
 
 type CartItem = { name: string; price: number };
 type OrderStatus = 'Open' | 'Closed';
 
 // Criando a classe
-export class ShoppingCart {
+export class ShoppingCartLegacy {
   // Criando o carrinho de item
   private readonly _items: CartItem[] = [];
   private _orderStatus: OrderStatus = 'Open';
@@ -72,7 +72,7 @@ export class ShoppingCart {
   }
 }
 
-const shoppingCart = new ShoppingCart();
+const shoppingCart = new ShoppingCartLegacy();
 shoppingCart.addItem({ name: `Camiseta`, price: 49.9 });
 shoppingCart.addItem({ name: `Caderno`, price: 9.9 });
 shoppingCart.addItem({ name: `Lapis`, price: 1.59 });
