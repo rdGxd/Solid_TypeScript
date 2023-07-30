@@ -12,6 +12,8 @@ Se eu tiver que checar a tipagem em algum momento, significa que eu quebrei o pr
 Forçar as subclasses a implementarem um método -> Isso quebra o principio de Liskov
 
 Todo Comportamento esperado de um subTipo de discount é discount
+---------------------------------------------------------------------------------------
+O LSP (Princípio da Substituição de Liskov) é um conceito da programação orientada a objetos que diz o seguinte: "Se você tem uma classe, você pode criar outras classes que se comportem como a primeira, sem causar problemas no programa." Em outras palavras, as classes derivadas devem poder ser usadas no lugar da classe original sem que nada dê errado. Isso ajuda a garantir que o código seja mais flexível e confiável.
 */
 
 import { NoDiscount } from './classes/discount';
